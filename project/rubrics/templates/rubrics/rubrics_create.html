@@ -251,21 +251,10 @@ Rúbricas - Plataforma de evaluación
         for(; j < cells.length; j++){
             if(cells[j].innerHTML.replace(/(<br>|\n|\t|\r)/g,"")){
                 max = parseFloat(levels[j].innerHTML);
-                is_empty = false
-            } else {
-              is_empty = true
-              break;
-            }
-        }
-        if (is_empty) {
-          for(; j < cells.length; j++){
-            if(cells[j].innerHTML.replace(/(<br>|\n|\t|\r)/g,"")){
-                is_empty = true;
-                break;
-            } else {
                 is_empty = false;
+            } else {
+              is_empty = true;
             }
-          }
         }
         if (is_empty) {
           sum = 0
