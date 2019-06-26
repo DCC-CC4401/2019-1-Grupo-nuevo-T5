@@ -188,7 +188,7 @@ Detalles de la evaluación - Plataforma de evaluación
             var div = document.createElement('div');
             div.className = "w3-panel  w3-margin-bottom";
             div.setAttribute("id", i);
-            div.setAttribute("name", "0");
+            div.setAttribute("name", "-1");
             var ul = document.createElement('ul');
             ul.className = "w3-ul w3-light-grey w3-center w3-card-4";
             var li = document.createElement('li');
@@ -249,7 +249,7 @@ Detalles de la evaluación - Plataforma de evaluación
         var divs = evaluation.getElementsByTagName('div');
         var respondido = 0;
         for(var i=0; i<divs.length; i++){
-            if(divs[i].getAttribute('name') != '0'){
+            if(divs[i].getAttribute('name') != '-1'){
                 respondido++;
             }
         }
