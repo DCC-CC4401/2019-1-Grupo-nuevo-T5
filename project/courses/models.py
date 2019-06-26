@@ -13,7 +13,7 @@ class Course(models.Model):
     code=models.CharField(max_length=20, blank=False, null=False)
     semester=models.CharField(choices=CHOICES1, default="Primavera", max_length=15, blank=False, null=False)
     section=models.IntegerField(choices=CHOICES2,default=1, blank=False, null=False)
-    year=models.CharField(max_length=4,default="2019", blank=False, null=False)
+    year=models.IntegerField(default=2019, blank=False, null=False)
     
     class Meta:
         unique_together= ('code', 'section', 'year', 'semester')

@@ -9,4 +9,4 @@ class CourseForm(forms.Form):
                  choices = ([('Primavera','Primavera'), ('Otoño','Otoño')]))
     section=forms.ChoiceField(widget = forms.Select(),
                  choices = ([('1','1'), ('2','2')]), initial='1')
-    year=forms.CharField(max_length=4,initial="2019")
+    year=forms.IntegerField(initial=2019)

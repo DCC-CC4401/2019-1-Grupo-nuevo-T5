@@ -174,7 +174,7 @@ function validateCourseData() {
     valid= false;
   }
   else perrorcode.style.display= "none";
-  if (isBlank(year.value)) {
+  if (isBlank(year.value) || (isNaN(Number(year.value)))) {
     perroryear.style.display= "block";
     valid= false;
   }
