@@ -246,10 +246,30 @@ Rúbricas - Plataforma de evaluación
     for(var i = 1; i < rows.length; i++){
         var cells = rows[i].cells;
         var max = 0;
-        for(var j = 1; j < cells.length; j++){
+        var is_empty = true
+        var j = 1;
+        for(; j < cells.length; j++){
             if(cells[j].innerHTML.replace(/(<br>|\n|\t|\r)/g,"")){
                 max = parseFloat(levels[j].innerHTML);
+                is_empty = false
+            } else {
+              is_empty = true
+              break;
             }
+        }
+        if (is_empty) {
+          for(; j < cells.length; j++){
+            if(cells[j].innerHTML.replace(/(<br>|\n|\t|\r)/g,"")){
+                is_empty = true;
+                break;
+            } else {
+                is_empty = false;
+            }
+          }
+        }
+        if (is_empty) {
+          sum = 0
+          break;
         }
         sum += max;
     }
@@ -313,6 +333,8 @@ Rúbricas - Plataforma de evaluación
       falta.push("-Nombre de la rúbrica (el nombre entregado ya existe)\n");
       b=false;
     }
+
+
     if(!b){
       var alert_text = 'Faltan los siguientes campos: \n';
       for (var i = 0; i < falta.length; i++) {
